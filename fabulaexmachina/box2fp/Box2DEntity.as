@@ -34,9 +34,9 @@ package fabulaexmachina.box2fp
 		 * @param restitution	bounciness
 		 */
 		public function Box2DEntity(x:Number=0, y:Number=0, w:uint = 1, 
-								h:uint = 1, b2Type:int = 0, group:int = 0, 
-								category:int = 0, collmask:int = 0, friction:Number = 0.3, 
-								density:Number = 1, restitution:Number = 1)
+								h:uint = 1, b2Type:int = 0,friction:Number = 0.3, 
+								density:Number = 1, restitution:Number = 1,
+								group:int = 0, category:int = 0, collmask:int = 0)
 		{
 			super(x, y, new SuperGraphiclist);
 			
@@ -113,7 +113,7 @@ package fabulaexmachina.box2fp
 				var pos:b2Vec2 = body.GetPosition();
 				x = pos.x * box2dworld.scale - width/2 + 1;
 				y = pos.y * box2dworld.scale - height/2 + 1;
-				angleRads = body.GetAngle();
+                angle = this.angle;
 			}
 			super.update();
 		}

@@ -95,9 +95,11 @@ package fabulaexmachina.box2fp.graphics
 			if (_angle == v) return;
 			for each (var g:Graphic in children)
 			{
-				if (g is Image)
+				if (g is Image){
 					(g as Image).angle += v - _angle;
-				else if (g is SuperGraphiclist)
+					(g as Image).centerOrigin();
+
+				}else if (g is SuperGraphiclist)
 					(g as SuperGraphiclist).angle += v - _angle;
 			}
 			_angle = v;
